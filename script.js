@@ -1,5 +1,7 @@
 var bandera=true
+var contadorIntentos=0
 while (bandera) {
+    contadorIntentos++
     console.log("menu taller")
     console.log("1. calcular salario")
     console.log("2. numeros pares")
@@ -79,7 +81,20 @@ while (bandera) {
             console.log("1.area")
             console.log("2.perimetro")
             console.log("3.area y perimetro")
-            var opcionMenu3=
+            console.log("4.menu anterior")
+            var opcionMenu3=Number(prompt("ingrese la opcion deseada"))
+            if (opcionMenu3===1) {
+                
+            }else if (opcionMenu3===2) {
+                
+            }else if (opcionMenu3===3) {
+                
+            }else if (opcionMenu3==4) {
+                console.log("volviendo al menu anterior")
+                bandera3=false
+            }else{
+                console.log("opcion incorrecta")
+            }
         }
 
     }else if(opcionMenu===7){
@@ -92,6 +107,9 @@ while (bandera) {
         
     }
 }
+console.log("numero de veces en el ciclo: "+contadorIntentos)
+
+
 function calcularSalario(cantidadHoras,valorHora) {
     return (cantidadHoras*valorHora)
 }
@@ -171,14 +189,18 @@ function tablaMultiplicar(x) {
     }
 }
 function AreaTriangulo(base,altura) {
-    var resultado=(base*altura)/2
+    let resultado=(base*altura)/2
 }
 function perimetroTriangulo(base,altura) {
-    hipotenusa=Math.sqrt(base**2 + altura**2);
+    let hipotenusa=Math.sqrt(base**2 + altura**2);
+    let perimetro=base+altura+hipotenusa
+    return perimetro    
 }
-function AreaCuadrado(params) {
-    
+function AreaCuadrado(base,altura) {
+    let area=base*altura
+    return area
 }
-function perimetroCuadrado(params) {
-    
+function perimetroCuadrado(base,altura) {
+    let perimetro= (2*altura)+(2*base)
+    return perimetro
 }
