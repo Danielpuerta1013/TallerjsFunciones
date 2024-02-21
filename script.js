@@ -1,16 +1,15 @@
 var bandera=true
 var contadorIntentos=0
 while (bandera) {
-    contadorIntentos++
-    console.log("menu taller")
-    console.log("1. calcular salario")
-    console.log("2. numeros pares")
-    console.log("3. calculadora")
-    console.log("4. pedir datos")
-    console.log("5. tabla multiplicar")
-    console.log("6. calcular area, perimetro, area y perimetro")
-    console.log("7. salir")
-    var opcionMenu=Number(prompt("ingrese la opcion deseada"))
+    contadorIntentos++    
+    var opcionMenu=Number(prompt(`menu taller
+    1. calcular salario
+    2. numeros pares
+    3. calculadora
+    4. pedir datos
+    5. tabla multiplicar
+    6. calcular area, perimetro, area y perimetro
+    7. salir`))
     if (opcionMenu===1) {
         console.log("bienvenido a la calculadora de salario")
         let valorHora=Number(prompt("ingrese el valor de la hora"))
@@ -24,13 +23,13 @@ while (bandera) {
 
     } else if(opcionMenu===3){
         let bandera2=true
-        while (bandera2) {
-            console.log("1. suma")
-            console.log("2. resta")
-            console.log("3. multiplicacion")
-            console.log("4. division")
-            console.log("5. salir")
-            var opcionMenu2=Number(prompt("ingrese la opcion deseada"))
+        while (bandera2) {            
+            var opcionMenu2=Number(prompt(`ingrese la opcion deseada
+            1. suma
+            2. resta
+            3. multiplicacion
+            4. division
+            5. salir`))
             if (opcionMenu2===1) {
                 let numero1=Number(prompt("ingrese el primer numero"))
                 let numero2=Number(prompt("ingrese el segundo numero"))
@@ -77,18 +76,36 @@ while (bandera) {
         var base=Number(prompt("ingrese el valor de la base"))
         var altura=Number(prompt("ingrese el valor de la altura"))
 
-        while (bandera3) {
-            console.log("1.area")
-            console.log("2.perimetro")
-            console.log("3.area y perimetro")
-            console.log("4.menu anterior")
-            var opcionMenu3=Number(prompt("ingrese la opcion deseada"))
+        while (bandera3) {            
+            var opcionMenu3=Number(prompt(`ingrese la opcion deseada
+            1.area
+            2.perimetro
+            3.area y perimetro
+            4.menu anterior`))
             if (opcionMenu3===1) {
-                
+                var valorAreaTringulo=AreaTriangulo(base,altura)
+                var valorAreaCuadrado=AreaCuadrado(base,altura)
+                console.log("el valor del area del triangulo es : "+valorAreaTringulo)
+                console.log("el valor del area del cuadrado es : "+valorAreaCuadrado)
+                console.log("el valor del area del rectangulo es : "+valorAreaCuadrado)
+
             }else if (opcionMenu3===2) {
-                
+                var valorPerimetroTriangulo=perimetroTriangulo(base,altura)
+                var valorPerimetroCuadrado=perimetroCuadrado(base,altura)
+                console.log("el valor del perimetro del triangulo es : "+valorPerimetroTriangulo)
+                console.log("el valor del perimetro del cuadrado es : "+valorPerimetroCuadrado)
+                console.log("el valor del perimetro del rectangulo es : "+valorPerimetroCuadrado)
             }else if (opcionMenu3===3) {
-                
+                var valorAreaTringulo=AreaTriangulo(base,altura)
+                var valorAreaCuadrado=AreaCuadrado(base,altura)
+                var valorPerimetroTriangulo=perimetroTriangulo(base,altura)
+                var valorPerimetroCuadrado=perimetroCuadrado(base,altura)
+                console.log("el valor del area del triangulo es : "+valorAreaTringulo)
+                console.log("el valor del area del cuadrado es : "+valorAreaCuadrado)
+                console.log("el valor del area del rectangulo es : "+valorAreaCuadrado)
+                console.log("el valor del perimetro del triangulo es : "+valorPerimetroTriangulo)
+                console.log("el valor del perimetro del cuadrado es : "+valorPerimetroCuadrado)
+                console.log("el valor del perimetro del rectangulo es : "+valorPerimetroCuadrado)
             }else if (opcionMenu3==4) {
                 console.log("volviendo al menu anterior")
                 bandera3=false
@@ -190,6 +207,7 @@ function tablaMultiplicar(x) {
 }
 function AreaTriangulo(base,altura) {
     let resultado=(base*altura)/2
+    return resultado
 }
 function perimetroTriangulo(base,altura) {
     let hipotenusa=Math.sqrt(base**2 + altura**2);
